@@ -38,7 +38,6 @@
                             </b-button>
                         </b-col>
                     </b-row>
-                    <hr/>
                     <b-row class="my-3" align-v="center">
                         <b-col sm="4">
                             <b-button class="container-fluid" id="id" :disabled="(this.valId.trim() && dbRewriteEnable)"
