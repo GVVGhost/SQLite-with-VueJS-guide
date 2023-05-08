@@ -1,3 +1,4 @@
+// Source - https://www.freecodecamp.org/news/check-if-a-javascript-string-is-a-url/
 export function isValidUrl(urlString) {
     const urlPattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
