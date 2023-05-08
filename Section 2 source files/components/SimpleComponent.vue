@@ -84,12 +84,16 @@ export default {
     },
     methods: {
         insertToDB() {
-            const index = this.tableList.findIndex(item => item.id === this.valId);
-            if (this.dbRewriteEnable && index >= 0) {
-                const temp = this.tableList[index]
-                temp.name = this.valName
-                temp.url = this.valUrl
-                this.tableList[index] = temp;
+            const start = this.tableList.findIndex(item => item.id === this.valId);
+           if (this.dbRewriteEnable && start >= 0) {               
+                const temp = {
+                    id: this.tableList[start].id,
+                    name: this.valName,
+                    url: this.valUrl
+                }
+                this.tableList.splice(start, 1, temp)
+                // або так:
+                // this.$set(this.tableList, start, temp)
             } else {
                 this.tableList.push({
                     id: uuidv4(),
