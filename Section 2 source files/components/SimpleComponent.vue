@@ -21,7 +21,7 @@
                                       @click="insertToDB"
                                       :disabled="btnDisabled"
                                       variant="outline-primary">
-                                {{ !dbRewriteEnable ? "Записати в БД" : "Перезаписати значення із БД" }}
+                                {{ dbRewriteEnable ? "Перезаписати значення із БД" : "Записати в БД" }}
                             </b-button>
                         </b-col>
                         <b-col sm="6">
@@ -38,7 +38,7 @@
                             <b-button class="container-fluid"
                                       :disabled="(this.valId.trim() && dbRewriteEnable)"
                                       @click="deleteFromDB" variant="outline-danger">
-                                {{ !dbRewriteEnable ? "Видалити id:" : "Id для перезапису:" }}
+                                {{ dbRewriteEnable ? "Id для перезапису:" : "Видалити id:" }}
                             </b-button>
                         </b-col>
                         <b-col sm="8">
